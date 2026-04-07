@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dev Portfolio — Diseño & Código en Armonía</title>
+  <meta name="description"
+    content="Portafolio de desarrollador Fullstack Junior. Diseño web + Python/Django. Proyectos, stack técnico y contacto." />
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <!-- animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#mainNav">
+
+  <!-- ==================== NAVBAR ==================== -->
+  <nav id="mainNav" class="navbar navbar-expand-md fixed-top navbar-dark nav-custom">
+    <div class="container">
+
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navContent"
+        aria-controls="navContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navContent">
+
+        <ul class="navbar-nav me-auto mb-2 mb-md-0 gap-md-4">
+          <li class="nav-item"><a class="nav-link font-mono" href="#sobre-mi">Sobre mí</a></li>
+          <li class="nav-item"><a class="nav-link font-mono" href="#stack">Stack</a></li>
+          <li class="nav-item"><a class="nav-link font-mono" href="#proyectos">Proyectos</a></li>
+          <li class="nav-item"><a class="nav-link font-mono" href="#contacto">Contacto</a></li>
+        </ul>
+        <!-- usuario -->
+        <div class="d-flex align-items-center ms-3">
+          <div class="user-profile-wrapper" style="position: relative;">
+            <a href="#contacto" class="d-inline-block">
+              <img src="assets/img/user_mini.jpg" alt="Perfil" class="rounded-circle border border-2 border-custom"
+                style="width: 38px; height: 38px; object-fit: cover;">
+              <span class="position-absolute bottom-0 end-0 p-1 bg-success border border-light rounded-circle"
+                style="width: 10px; height: 10px;"></span>
+            </a>
+          </div>
+        </div>
+        <!-- usuario -->
+      </div>
+    </div>
+  </nav>
+  <!-- ==================== HERO ==================== -->
+
+  <header id="hero" class="hero-section d-flex align-items-center justify-content-center  min-vh-90 scroll-reveal">
+    <div class="hero-glow "></div>
+    <div class="container position-relative z-1">
+      <div class="row align-items-center min-vh-75">
+        <div class="col">
+          <div class="hero-content align-items-start fade-in">
+            <p class="font-mono text-accent small tracking-wide mb-3">// Fullstack Developer</p>
+
+            <h1 class="display-3 fw-bold font-mono mb-3 text-white">
+              Diseño <span class="text-accent text-glow">&amp;</span> Código<br />
+              <span class="text-accent text-glow">en armonía.</span>
+            </h1>
+
+            <p class="lead text-secondary-custom mb-4 col">
+              Desarrollador que une la estética del diseño web con la robustez de
+              <span class="text-accent fw-medium">Python &amp; Django</span>.
+              Buscando mi primera oportunidad profesional.
+            </p>
+
+            <div class="d-flex flex-wrap gap-3 mb-5">
+              <a href="https://github.com/mig-maureira?tab=repositories"
+                class="btn btn-accent font-mono fw-semibold px-4 py-2">
+                Ver Proyectos
+              </a>
+              <a href="#contacto" class="btn btn-outline-custom font-mono px-4 py-2">
+                Contactar
+              </a>
+            </div>
+
+            <div class="d-flex gap-4 border-top border-custom pt-4">
+              <div>
+                <div class="h3 fw-bold mb-0 text-accent">Python</div>
+                <small class="text-uppercase tracking-wider fw-semibold text-secondary-custom font-mono"
+                  style="font-size: 0.7rem;">
+                  Backend & Django
+                </small>
+              </div>
+              <div class="vr bg-custom opacity-50"></div>
+              <div>
+                <div class="h3 fw-bold mb-0 text-accent">UI/UX</div>
+                <small class="text-uppercase tracking-wider fw-semibold text-secondary-custom font-mono"
+                  style="font-size: 0.7rem;">
+                  Diseño Web Moderno
+                </small>
+              </div>
+              <div>
+                <div class="h3 fw-bold mb-0 text-accent">PHP</div>
+                <small class="text-uppercase tracking-wider fw-semibold text-secondary-custom font-mono"
+                  style="font-size: 0.7rem;">
+                  Creando estilos para Worpress
+                </small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=600 -->
+        <div class="col-lg-6 mt-5 mt-lg-0 text-center">
+          <div class="fade-in fade-in-delay-1">
+            <div class="position-relative d-inline-block">
+              <img src="assets/img/mini.jpg" alt="Desarrollo de Software"
+                class="img-fluid rounded-4 shadow-lg border border-custom"
+                style="max-height: 600px; width: 100%; object-fit: cover; filter: grayscale(20%);">
+
+              <div
+                class="position-absolute bottom-0 start-0 translate-middle-y bg-card border border-custom p-3 rounded-3 shadow-lg d-none d-md-block">
+                <span class="font-mono text-accent small">Status: </span>
+                <span class="font-mono text-white small">Disponible para trabajar</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ==================== PROYECTOS ==================== -->
+
+  <section id="proyectos" class="section-padding ">
+    <div class="container col-12 col-md-10">
+      <div class="scroll-reveal">
+        <p class="font-mono text-accent small tracking-wide mb-2">// Proyectos</p>
+        <h2 class="display-6 fw-bold font-mono mb-5">
+          Lo que he <span class="text-accent text-glow">construido</span>
+        </h2>
+      </div>
+
+      <!-- Proyecto 1 -->
+      <article class="card-custom p-4 p-md-5 mb-4 hover-border project-card scroll-reveal">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-start gap-3 mb-4">
+          <h3 class="fs-4 fw-bold font-mono project-title mb-0">Ecommerce Django</h3>
+          <div class="d-flex gap-2 flex-shrink-0">
+            <a href="#" class="btn btn-accent btn-sm font-mono" data-bs-toggle="modal" data-bs-target="#demoModal">
+              <i class="bi bi-box-arrow-up-right me-1"></i>Demo
+            </a>
+            <a href="https://github.com/mig-maureira/django_ecommerce_v2" class="btn btn-accent btn-sm font-mono"><i
+                class="bi bi-box-arrow-up-right me-1"></i>GitHub</a>
+          </div>
+        </div>
+        <div class="row g-4 mb-4">
+          <div class="col-md-4">
+            <p class="font-mono text-accent small text-uppercase tracking-wide mb-1">El Desafío</p>
+            <p class="text-secondary-custom small">Crear una plataforma donde los usuarios pudieran gestionar sus
+              productos sin mayor problema</p>
+          </div>
+          <div class="col-md-4">
+            <p class="font-mono text-accent small text-uppercase tracking-wide mb-1">La Solución</p>
+            <p class="text-secondary-custom small">Desarrollo del backend y frontend con Django,
+              implementando autenticación personalizada y una base de datos relacional.</p>
+          </div>
+          <div class="col-md-4">
+            <p class="font-mono text-accent small text-uppercase tracking-wide mb-1">El Resultado</p>
+            <p class="text-secondary-custom small">Aplicación responsiva con dashboard interactivo y carrito de compras.
+            </p>
+          </div>
+        </div>
+        <div class="border-top border-custom pt-3 d-flex flex-column flex-sm-row align-items-sm-center gap-3">
+          <p class="small text-secondary-custom fst-italic flex-grow-1 mb-0">💡 Aprendí a manejar relaciones
+            Many-to-Many en la base de datos y a optimizar queries con Django ORM.</p>
+          <div class="d-flex flex-wrap gap-2">
+            <span class="project-tech-badge">Django</span>
+            <span class="project-tech-badge">PostgreSQL</span>
+            <span class="project-tech-badge">Bootstrap</span>
+            <span class="project-tech-badge">JavaScript</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Proyecto 2 -->
+      <article class="card-custom p-4 p-md-5 mb-4 hover-border project-card scroll-reveal">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-start gap-3 mb-4">
+          <h3 class="fs-4 fw-bold font-mono project-title mb-0">Proyecto Librería - Django</h3>
+          <div class="d-flex gap-2 flex-shrink-0">
+
+            <a href="#" class="btn btn-accent btn-sm font-mono" data-bs-toggle="modal" data-bs-target="#demoModaltwo">
+              <i class="bi bi-box-arrow-up-right me-1"></i>Demo</a>
+            <a href="https://github.com/mig-maureira/crud_django_rest" class="btn btn-accent btn-sm font-mono"><i
+                class="bi bi-box-arrow-up-right me-1"></i>GitHub</a>
+          </div>
+        </div>
+        <div class="row g-4 mb-4">
+          <div class="col-md-4">
+            <p class="font-mono text-accent small text-uppercase tracking-wide mb-1">El Desafío</p>
+            <p class="text-secondary-custom small">Aprende el uso de la implementacion de django Rest Framework</p>
+          </div>
+          <div class="col-md-4">
+            <p class="font-mono text-accent small text-uppercase tracking-wide mb-1">La Solución</p>
+            <p class="text-secondary-custom small">Desarrollo del backend y frontend con Django,
+              implementando autenticación por Django Rest Framework haciendo uso de bases de datos relacionales.</p>
+          </div>
+          <div class="col-md-4">
+            <p class="font-mono text-accent small text-uppercase tracking-wide mb-1">El Resultado</p>
+            <p class="text-secondary-custom small">Aplicación responsiva con un dashboard interactivo, donde los
+              usuarios son gestionados mediante Django REST Framework, mientras que los libros se administran con Django
+              tradicional. Esto permite crear vistas más atractivas e intuitivas para los usuarios.
+            </p>
+          </div>
+        </div>
+        <div class="border-top border-custom pt-3 d-flex flex-column flex-sm-row align-items-sm-center gap-3">
+          <p class="small text-secondary-custom fst-italic flex-grow-1 mb-0">
+            💡 Aprendí a integrar rest framework a un proyecto con el fin de generar una gestion de usuarios segura y
+            una gestion de
+            libros(o productos) intuitiva.
+          </p>
+          <div class="d-flex flex-wrap gap-2">
+            <span class="project-tech-badge">Django</span>
+            <span class="project-tech-badge">PostgreSQL</span>
+            <span class="project-tech-badge">Bootstrap</span>
+            <span class="project-tech-badge">JavaScript</span>
+            <span class="project-tech-badge">Django REST Framework</span>
+          </div>
+        </div>
+      </article>
+
+
+      <!-- Proyecto 3 -->
+
+    </div>
+  </section>
+
+
+
+  <!-- ==================== STACK ==================== -->
+  <section id="stack" class="section-padding bg-card-50">
+    <div class="container col-12 col-md-10">
+      <div class="scroll-reveal">
+        <p class="font-mono text-accent small tracking-wide mb-2">// Mi Stack</p>
+        <h2 class="display-6 fw-bold font-mono mb-5">
+          Herramientas que <span class="text-accent text-glow">domino</span>
+        </h2>
+      </div>
+      <div class="row g-4">
+        <!-- Frontend -->
+        <div class="col-md-4 scroll-reveal">
+          <div class="card-custom p-4 h-100 hover-border">
+            <h3 class="font-mono text-accent fw-semibold fs-5 mb-3">&gt; Frontend</h3>
+            <div class="d-flex flex-wrap gap-2">
+              <span class="tech-badge">HTML5</span>
+              <span class="tech-badge">CSS3</span>
+              <span class="tech-badge">JavaScript</span>
+              <span class="tech-badge">Tailwind CSS</span>
+              <span class="tech-badge">Bootstrap</span>
+              <span class="tech-badge">Wordpress</span>
+            </div>
+          </div>
+        </div>
+        <!-- Backend -->
+        <div class="col-md-4 scroll-reveal" style="--reveal-delay: 0.15s;">
+          <div class="card-custom p-4 h-100 hover-border">
+            <h3 class="font-mono text-accent fw-semibold fs-5 mb-3">&gt; Backend</h3>
+            <div class="d-flex flex-wrap gap-2">
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">Django</span>
+              <span class="tech-badge">PHP</span>
+              <span class="tech-badge">Django REST Framework</span>
+            </div>
+          </div>
+        </div>
+        <!-- DB & Tools -->
+        <div class="col-md-4 scroll-reveal" style="--reveal-delay: 0.3s;">
+          <div class="card-custom p-4 h-100 hover-border">
+            <h3 class="font-mono text-accent fw-semibold fs-5 mb-3">&gt; DB &amp; Tools</h3>
+            <div class="d-flex flex-wrap gap-2">
+              <span class="tech-badge">PostgreSQL</span>
+              <span class="tech-badge">SQLite</span>
+              <span class="tech-badge">Git</span>
+              <span class="tech-badge">GitHub</span>
+              <span class="tech-badge">Docker</span>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== SOBRE MÍ ==================== -->
+  <section id="sobre-mi" class="section-padding">
+    <div class="container col-12 col-md-10">
+      <div class="scroll-reveal">
+        <p class="font-mono text-accent small tracking-wide mb-2">// Sobre mí</p>
+        <h2 class="display-6 fw-bold font-mono mb-4">
+          El puente entre <span class="text-accent text-glow">diseño</span> y
+          <span class="text-accent text-glow">código</span>
+        </h2>
+        <div class="card-custom p-4 p-md-5 border-glow">
+          <p class="fs-5 mb-3" style="color: var(--foreground-90);">
+            Soy un desarrollador que entiende que un buen código no sirve de nada si el usuario no sabe usarlo.
+            Me especializo en unir la estética del diseño web con la robustez de Django.
+          </p>
+          <p class="text-secondary-custom mb-0">
+            Me apasiona resolver problemas lógicos y estoy buscando mi primera oportunidad profesional
+            para aportar valor en equipos que valoren la escalabilidad y la experiencia de usuario.
+            Cada proyecto que construyo es una oportunidad de aprender algo nuevo y demostrar que un perfil
+            Junior puede aportar ideas frescas y dedicación.
+          </p>
+        </div>
+      </div>
+      <p class="font-mono text-accent small tracking-wide mb-2">// Contacto</p>
+    </div>
+  </section>
+
+
+  <!-- ==================== CONTACTO ==================== -->
+  <section id="contacto" class="section-padding bg-card-50">
+
+    <div class="container text-center col-10">
+
+      <div class="scroll-reveal">
+
+        <h2 class="display-6 fw-bold font-mono mb-3">
+          ¿Trabajamos <span class="text-accent text-glow">juntos</span>?
+        </h2>
+        <p class="text-secondary-custom fs-5 mb-5">
+          Estoy buscando mi primera oportunidad profesional. Si tu equipo valora la escalabilidad
+          y la experiencia de usuario, hablemos.
+        </p>
+        <div class="d-flex flex-wrap justify-content-center gap-3">
+          <a href="mailto:mig.maureira@duocuc.cl" class="btn btn-accent font-mono fw-semibold px-4 py-2">
+            <i class="bi bi-envelope me-2"></i>Email
+          </a>
+          <a href="https://www.linkedin.com/in/miguel-maureira-246096379/" target="_blank" rel="noopener noreferrer"
+            class="btn btn-outline-custom font-mono px-4 py-2">
+            <i class="bi bi-linkedin me-2"></i>LinkedIn
+          </a>
+          <a href="https://github.com/mig-maureira" target="_blank" rel="noopener noreferrer"
+            class="btn btn-outline-custom font-mono px-4 py-2">
+            <i class="bi bi-github me-2"></i>GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+
+
+  </section>
+  <!-- sitio modal / ecommerce -->
+
+  <div class="modal fade" id="demoModal" tabindex="-1" aria-labelledby="demoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-scrollable">
+      <div class="modal-content nav-custom">
+
+        <div class="modal-header border-custom">
+          <h4>Ecommerce / Django </h4>
+          <button type="button" class="btn-close btn-close-white" data-bs-theme="dark" data-bs-dismiss="modal"
+            aria-label="Cerrar">
+          </button>
+        </div>
+
+        <div class="modal-body p-0">
+          <iframe style="width: 100%; height: 80vh; border: none;" src="alma.html"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- sitio modal / ecommerce -->
+
+  <div class="modal fade" id="demoModaltwo" tabindex="-1" aria-labelledby="demoModalLabeltwo" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-scrollable ">
+      <div class="modal-content nav-custom">
+
+        <div class="modal-header border-custom">
+          <h4> Codigo Django REST</h4>
+          <button type="button" class="btn-close btn-close-white" data-bs-theme="dark" data-bs-dismiss="modal"
+            aria-label="Cerrar">
+          </button>
+        </div>
+
+        <div class="modal-body p-0">
+          <pre><code class="language-python">
+          class UserSerializer(serializers.ModelSerializer):
+              password = serializers.CharField(write_only=True)
+          
+              class Meta:
+                  model = User
+                  fields = ["id", "username", "email", "first_name", "last_name", "password"]
+          
+              def create(self, validated_data):
+                  user = User(
+                      username=validated_data["username"],
+                      email=validated_data.get("email", ""),
+                      first_name=validated_data.get("first_name", ""),
+                      last_name=validated_data.get("last_name", ""),
+                  )
+                  user.set_password(validated_data["password"])
+                  user.save()
+                  return user
+          
+              def update(self, instance, validated_data):
+                  password = validated_data.pop("password", None)
+                  for attr, value in validated_data.items():
+                      setattr(instance, attr, value)
+                  if password:
+                      instance.set_password(password)
+                  instance.save()
+                  return instance
+        </code>
+        </pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--  -->
+  <footer class="text-center mt-5 pt-4">
+    <p class="font-mono text-secondary-custom small">Diseñado &amp; Desarrollado con 💚 — 2026</p>
+  </footer>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script src="assets/js/script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script>
+    hljs.highlightAll();
+  </script>
+</body>
+
+</html>

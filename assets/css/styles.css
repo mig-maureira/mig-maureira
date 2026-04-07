@@ -1,0 +1,261 @@
+/* ============================================
+   PORTFOLIO — Ubuntu Edition (Bootstrap 5)
+   ============================================ */
+
+/* Importar tipografía oficial de Ubuntu */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&family=Ubuntu+Mono&display=swap');
+
+/* ---------- CSS Variables (Ubuntu Palette) ---------- */
+:root {
+  --bg:             #1e1e2e; /* Ubuntu Jet */
+  --bg-card:        #1e1e2e;
+  --bg-card-50:     rgba(51, 51, 51, 0.5);
+  --bg-surface:     #1e1e2e;;
+  --foreground:     #ffffff;
+  --foreground-90:  rgba(255, 255, 255, 0.9);
+  --muted:          #cdd6f4; 
+  --accent:         #E95420; /* Ubuntu Orange */
+  --accent-hover:   #c7461b5b;
+  --accent-glow:    rgba(233, 67, 6, 0.4);
+  --accent-glow-sm: rgba(95, 11, 151, 0.1);
+  --border:         #cdd6f4 ;
+  --border-hover:   rgba(233, 84, 32, 0.5);
+  --font-mono:      'Ubuntu Mono', monospace;
+  --font-body:      'Ubuntu', sans-serif;
+  
+  /* Color secundario: Aubergine */
+  --aubergine:      #772953; 
+}
+
+/* ---------- Base ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg);
+  color: var(--foreground);
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--accent);
+  color: white;
+}
+
+/* ---------- Typography helpers ---------- */
+.font-mono {
+  font-family: var(--font-mono) !important;
+}
+
+.tracking-wide {
+  letter-spacing: 0.05em;
+}
+
+.text-accent {
+  color: var(--accent) !important;
+}
+
+.text-secondary-custom {
+  color: var(--muted) !important;
+}
+
+.text-glow {
+  text-shadow: 0 0 15px var(--accent-glow);
+}
+
+/* ---------- Navbar ---------- */
+.nav-custom {
+  background: #1e1e2e80; /* Jet con transparencia */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.border-custom {
+    border-color: var(--border) !important;
+    /* --bs-btn-close-color: var(--border) !important; */
+}
+
+/* Efecto hover suave para el avatar */
+.user-profile-wrapper img {
+    transition: border-color 0.3s ease;
+    cursor: pointer;
+}
+
+.user-profile-wrapper:hover img {
+    border-color: var(--accent) !important;
+}
+
+
+.nav-custom .nav-link {
+  color: var(--muted) !important;
+  font-weight: 400;
+  transition: color 0.25s;
+}
+
+.nav-custom .nav-link:hover,
+.nav-custom .nav-link.active {
+  color: var(--accent) !important;
+}
+
+/* ---------- Hero ---------- */
+.hero-section {
+  min-height: 80vh;
+  position: relative;
+  /* Patrón de puntos sutil en lugar de rejilla dura */
+  background-image: radial-gradient(var(--border) 1px,  transparent 1px);
+  background-size: 60px 60px;
+}
+
+.hero-glow {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--accent-glow-sm) 0%, transparent 70%);
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.hero-scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: bounce 2s infinite;
+  color: var(--accent);
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50%      { transform: translateX(-50%) translateY(10px); }
+}
+
+/* ---------- Cards ---------- */
+.card-custom {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 4px; /* Ubuntu usa bordes menos redondeados */
+  transition: transform 0.3s ease, border-color 0.3s;
+}
+
+.hover-border:hover {
+  border-color: var(--accent);
+  transform: translateY(-5px);
+}
+
+/* ---------- Tech Badges ---------- */
+.tech-badge {
+  display: inline-block;
+  padding: 0.35rem 0.75rem;
+  background: var(--aubergine); /* Toque de berenjena en los badges */
+  color: white;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  border-radius: 3px;
+  border: none;
+}
+
+.project-tech-badge {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  background: rgba(233, 84, 32, 0.1);
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  border: 1px solid var(--accent);
+}
+
+/* ---------- Buttons ---------- */
+.btn-accent {
+  background-color: var(--accent);
+  color: white;
+  border-radius: 4px;
+  font-weight: 500;
+  border: none;
+}
+
+.btn-accent:hover {
+  background-color: var(--accent-hover);
+  color: white;
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 12px rgb(255, 68, 0);
+}
+
+
+.btn-outline-custom {
+  background: transparent;
+  color: var(--foreground);
+  border: 1px solid var(--border);
+  transition: border-color 0.25s, background 0.25s;
+}
+
+.btn-outline-custom:hover {
+  border-color: var(--border-hover);
+  background: var(--bg-surface);
+  color: var(--foreground);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ---------- Scrollbar ---------- */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #5e5e5e;
+  border-radius: 5px;
+  border: 2px solid var(--bg);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted);
+}
+/* 1. Estado inicial: Oculto y desplazado hacia abajo */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(40px); /* Empieza 40px más abajo */
+    /* La transición dicta la suavidad y duración del efecto */
+    transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* 2. Estado final: Visible y en su lugar original */
+.scroll-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}

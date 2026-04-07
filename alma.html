@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alma | Cremas naturales.</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        /* --- CUSTOM CSS PARA ALMA --- */
+        /* --- VARIABLES DE COLOR (Según PDF) --- */
+        :root {
+            /* Variables base del proyecto */
+            --color-terracota: #4ac48b;
+            --color-verde-oliva: #7a8b69;
+            --color-crema: #faf8f5;
+            --color-texto: #3d3d3d;
+            --font-titulo: "Cormorant Garamond", serif;
+            --font-cuerpo: "Lato", sans-serif;
+
+            /* --- VARIABLES ADICIONALES PARA LOGIN Y CONFIRMACIÓN --- */
+            --color-login-primary: #8a5a44;
+            /* Tono terroso/rojo para botones/enlaces de login */
+            --color-login-success: #5aa469;
+            /* Verde para el checkmark de éxito de compra */
+            --color-login-button-hover: #a17869;
+            /* Hover para login */
+        }
+
+        html {
+            scroll-behavior: smooth;
+            /* Desplazamiento suave nativo */
+            scroll-padding-top: 60px;
+            /* Offset para que el navbar fijo no tape el título */
+        }
+
+        body {
+            font-family: var(--font-cuerpo);
+            color: var(--color-texto);
+            background-color: var(--color-crema);
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        .navbar-brand {
+            font-family: var(--font-titulo);
+        }
+
+        /* --- UTILIDADES PERSONALIZADAS --- */
+        .text-terracota {
+            color: var(--color-terracota) !important;
+        }
+
+        .bg-terracota {
+            background-color: var(--color-terracota) !important;
+        }
+
+        .text-verde {
+            color: var(--color-verde-oliva) !important;
+        }
+
+        .bg-verde {
+            background-color: var(--color-verde-oliva) !important;
+        }
+
+        /* Botones */
+        .btn-alma-primary {
+            background-color: var(--color-terracota);
+            color: white;
+            border-radius: 30px;
+            padding: 10px 25px;
+            border: 2px solid var(--color-terracota);
+            transition: all 0.3s ease;
+        }
+
+        .btn-alma-primary:hover {
+            background-color: transparent;
+            color: var(--color-terracota);
+        }
+
+        .btn-alma-outline {
+            background-color: transparent;
+            color: var(--color-texto);
+            border: 1px solid var(--color-texto);
+            border-radius: 30px;
+            padding: 10px 25px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-alma-outline:hover {
+            background-color: var(--color-texto);
+            color: white;
+        }
+
+        /* --- 1. HEADER & ANIMACIONES DE NAVEGACIÓN --- */
+        .navbar {
+            background-color: rgba(250, 248, 245, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            transition: all 0.3s;
+        }
+
+        .navbar-brand {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--color-terracota);
+        }
+
+        /* --- ESTILOS DE NAVEGACIÓN ANIMADOS --- */
+        .nav-link {
+            color: var(--color-texto);
+            font-weight: 500;
+            margin: 0 10px;
+            position: relative;
+            /* Necesario para posicionar el ::after */
+            transition: color 0.3s ease, transform 0.3s ease;
+            padding-bottom: 5px;
+        }
+
+        .nav-link:hover {
+            color: var(--color-terracota);
+        }
+
+        /* La línea animada (inicialmente invisible/sin ancho) */
+        .nav-link::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            /* Empezamos desde el centro */
+            transform: translateX(-50%);
+            width: 0%;
+            /* Ancho inicial 0 */
+            height: 2px;
+            background-color: var(--color-terracota);
+            transition: width 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            /* Animación suave */
+            border-radius: 2px;
+        }
+
+        /* Estado Activo (Scroll Spy) */
+        .nav-link.active {
+            color: var(--color-terracota) !important;
+            font-weight: 700;
+            transform: translateY(-2px);
+            /* Pequeña elevación del texto */
+        }
+
+        /* Expandir la línea cuando está activo */
+        .nav-link.active::after {
+            width: 80%;
+            /* Se expande al 80% del ancho del texto */
+        }
+
+        /* Efecto Hover opcional (para que también se anime al pasar el mouse) */
+        .nav-link:hover::after {
+            width: 50%;
+            opacity: 0.5;
+        }
+
+        .navbar-brand-img {
+            aspect-ratio: 1 / 1;
+            /* Mantiene la imagen cuadrada siempre */
+            object-fit: cover;
+            /* Asegura que rellene el cuadrado */
+            max-width: 60px;
+            /* Tamaño máximo para la imagen del logo */
+        }
+
+        /*Se aplica css custom para solucionar alineacion de imagen y textos (col-base) en el footer*/
+        .col-base {
+            align-items: flex-end;
+        }
+
+        @media (min-width: 576px) {
+            .span-margen-top {
+                display: inline-flex;
+                height: 69px;
+                align-items: flex-end;
+            }
+        }
+
+        @media (max-width: 990px) {
+
+            /* --- ESTILOS DE NAVEGACIÓN ANIMADOS --- */
+            .nav-link {
+                color: var(--color-texto);
+                font-weight: 500;
+                margin: 0 10px;
+                position: relative;
+                /* Necesario para posicionar el ::after */
+                transition: color 0.5s ease, transform 0.5s ease;
+                padding-bottom: 5px;
+            }
+
+            .nav-link:hover {
+                color: var(--color-terracota);
+            }
+
+            /* La línea animada (inicialmente invisible/sin ancho) */
+            .nav-link::after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 5%;
+                /* Empezamos desde el centro */
+                transform: translateX(-50%);
+                width: 0%;
+                /* Ancho inicial 0 */
+                height: 2px;
+                background-color: var(--color-terracota);
+                transition: width 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+                /* Animación suave */
+                border-radius: 2px;
+            }
+
+            /* Estado Activo (Scroll Spy) */
+            .nav-link.active {
+                color: var(--color-terracota) !important;
+                font-weight: 700;
+                transform: translateY(-2px);
+                /* Pequeña elevación del texto */
+            }
+
+            /* Expandir la línea cuando está activo */
+            .nav-link.active::after {
+                width: 10%;
+                /* Se expande al 80% del ancho del texto */
+            }
+
+            /* Efecto Hover opcional (para que también se anime al pasar el mouse) */
+            .nav-link:hover::after {
+                width: 10%;
+                opacity: 0.5;
+            }
+
+        }
+
+        .badge-cart {
+            background-color: var(--color-terracota);
+            font-size: 0.7rem;
+        }
+
+        .icon-trigger {
+            cursor: pointer;
+            border: none;
+            background: none;
+            padding: 0;
+            color: var(--color-texto);
+            transition: color 0.3s;
+        }
+
+        .icon-trigger:hover {
+            color: var(--color-terracota);
+        }
+
+        /* --- 2. HERO SECTION --- */
+        .hero-section {
+            background: linear-gradient(135deg, #faf8f5 0%, #fdfbf9 100%);
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+
+        .hero-subtitle {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            color: var(--color-verde-oliva);
+            margin-bottom: 1rem;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--color-texto);
+        }
+
+        .hero-image-container img {
+            border-radius: 20px;
+            box-shadow: 20px 20px 0px var(--color-verde-oliva);
+            transition: transform 0.8s ease;
+        }
+
+        .hero-image-container:hover img {
+            transform: scale(1.15);
+        }
+
+        /* --- 3. PRODUCTOS DESTACADOS --- */
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 3rem;
+            color: var(--color-texto);
+        }
+
+        .section-subtitle {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--color-verde-oliva);
+            font-size: 0.9rem;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .product-card {
+            border: none;
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+
+        .product-image-wrapper {
+            overflow: hidden;
+            height: 300px;
+            position: relative;
+        }
+
+        .product-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+
+        .product-card:hover .product-image-wrapper img {
+            transform: scale(1.15);
+            /* Efecto Zoom solicitado */
+        }
+
+        .category-tag {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background-color: var(--color-verde-oliva);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .price {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--color-terracota);
+        }
+
+        /* --- 4. SECCIÓN ENVÍOS --- */
+        .shipping-section {
+            background-color: #f4f1ed;
+            padding: 80px 0;
+        }
+
+        .shipping-card {
+            text-align: center;
+            padding: 20px;
+            height: 100%;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+        }
+
+        .shipping-icon {
+            font-size: 2.5rem;
+            color: var(--color-terracota);
+            margin-bottom: 15px;
+            background: #fff0eb;
+            width: 70px;
+            height: 70px;
+            line-height: 70px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        /* --- 5. PROMOCIONES --- */
+        .promo-card {
+            background-color: white;
+            border-radius: 15px;
+            padding: 2rem;
+            height: 100%;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .promo-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: var(--color-crema);
+            border-radius: 0 0 0 100%;
+            opacity: 0.5;
+        }
+
+        .promo-icon {
+            font-size: 2rem;
+            color: var(--color-terracota);
+            margin-bottom: 1rem;
+        }
+
+        /* --- 6. FOOTER --- */
+        footer {
+            background-color: #2c2c2c;
+            /* Fondo oscuro */
+            color: #dcdcdc;
+            padding-top: 80px;
+            padding-bottom: 20px;
+        }
+
+        footer h5 {
+            color: #fff;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        footer ul {
+            padding: 0;
+            list-style: none;
+        }
+
+        footer li {
+            margin-bottom: 10px;
+        }
+
+        footer a {
+            color: #dcdcdc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: var(--color-terracota);
+        }
+
+        .newsletter-input {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            border-radius: 5px 0 0 5px;
+        }
+
+        .newsletter-input:focus {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border-color: var(--color-terracota);
+            box-shadow: none;
+        }
+
+        /* --- 7. BOTÓN FLOTANTE --- */
+        .fab-container {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 10px;
+        }
+
+        .fab-main {
+            width: 60px;
+            height: 60px;
+            background-color: var(--color-verde-oliva);
+            border-radius: 50%;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .fab-main:hover {
+            transform: scale(1.1);
+        }
+
+        .fab-options {
+            display: none;
+            /* Oculto por defecto */
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .fab-options.active {
+            display: flex;
+        }
+
+        .fab-item {
+            width: 50px;
+            height: 50px;
+            background-color: white;
+            color: var(--color-texto);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .fab-item:hover {
+            background-color: var(--color-crema);
+        }
+
+        /* --- 8. ESTILOS CARRITO (OFFCANVAS) --- */
+        .offcanvas-header {
+            background-color: var(--color-crema);
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .offcanvas-title {
+            font-family: var(--font-titulo);
+            color: var(--color-terracota);
+            font-weight: 700;
+        }
+
+        .cart-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .cart-item-img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-right: 15px;
+        }
+
+        .cart-item-details {
+            flex-grow: 1;
+        }
+
+        .cart-item-title {
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin: 0;
+            color: var(--color-texto);
+        }
+
+        .cart-item-price {
+            font-size: 0.85rem;
+            color: var(--color-verde-oliva);
+        }
+
+        .cart-item-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-qty {
+            padding: 0 8px;
+            border: 1px solid #ddd;
+            background: white;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            cursor: pointer;
+        }
+
+        .btn-remove {
+            color: #dc3545;
+            cursor: pointer;
+            border: none;
+            background: none;
+            font-size: 0.9rem;
+        }
+
+        /* --- 9. ESTILOS BÚSQUEDA (OVERLAY) --- */
+        #search-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            /* Oculto inicialmente */
+            background-color: rgba(250, 248, 245, 0.98);
+            /* Fondo crema muy opaco */
+            z-index: 2000;
+            /* Encima de todo, incluso del navbar */
+            overflow: hidden;
+            transition: height 0.4s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #search-overlay.open {
+            height: 300px;
+            /* Altura al abrirse */
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .search-container {
+            width: 80%;
+            max-width: 600px;
+            text-align: center;
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 15px 0;
+            font-size: 2rem;
+            font-family: var(--font-titulo);
+            border: none;
+            border-bottom: 2px solid var(--color-terracota);
+            background: transparent;
+            color: var(--color-texto);
+            outline: none;
+            text-align: center;
+        }
+
+        .search-input::placeholder {
+            color: #aaa;
+            font-style: italic;
+        }
+
+        .close-search {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--color-texto);
+            background: none;
+            border: none;
+        }
+
+        .close-search:hover {
+            color: var(--color-terracota);
+        }
+
+        /* Clase para ocultar productos filtrados */
+        .product-hidden {
+            display: none !important;
+        }
+
+        /* Responsividad extra */
+        @media (max-width: 991px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+
+            .hero-image-container {
+                margin-top: 2rem;
+            }
+        }
+
+        /* --- 10. ESTILOS DE MÓDULOS ESPECÍFICOS (Login/Confirmación) --- */
+
+        /* 10.1 Estilos generales de Login y Confirmación */
+        .login-container,
+        .confirmation-container {
+            min-height: 100vh;
+            padding: 3rem 0;
+        }
+
+        .card-custom {
+            border: none;
+            border-radius: 1.5rem;
+            /* Usando 1.5rem de la página de Compra, más suave */
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+            max-width: 600px;
+            margin: auto;
+        }
+
+        /* 10.2 Estilos de Login */
+        .image-side {
+            /* Estilo para la imagen lateral del login. */
+            background-color: var(--color-crema);
+            background-size: cover;
+            background-position: center;
+            border-radius: 0 1rem 1rem 0;
+            /* Un poco menos redondeado que la card */
+            min-height: 500px;
+        }
+
+        .form-control:focus {
+            /* Usando el color principal del login como foco */
+            border-color: var(--color-login-primary);
+            box-shadow: 0 0 0 0.25rem rgba(138, 90, 68, 0.25);
+        }
+
+
+        /* 10.3 Botones unificados */
+        .btn-custom {
+            /* Botón primario de Login */
+            background-color: var(--color-login-primary);
+            border-color: var(--color-login-primary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-custom:hover {
+            background-color: var(--color-login-button-hover);
+            border-color: var(--color-login-button-hover);
+            color: white;
+        }
+
+        /* El botón de la compra exitosa (.btn-custom-primary) es esencialmente el mismo que .btn-custom, 
+   se usa un selector combinado para ambos: */
+        .btn-custom-primary,
+        .btn-custom {
+            background-color: var(--color-login-primary);
+            border-color: var(--color-login-primary);
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 0.5rem;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Botón secundario/outline de Compra Exitosa y link de Crear Cuenta */
+        .btn-custom-secondary {
+            border: 1px solid var(--color-login-primary);
+            color: var(--color-login-primary);
+            padding: 0.75rem 2rem;
+            border-radius: 0.5rem;
+            background-color: transparent;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-custom-secondary:hover {
+            background-color: var(--color-crema);
+            color: var(--color-login-primary);
+        }
+
+        .footer-links a {
+            color: var(--color-login-primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* 10.4 Estilos de Confirmación de Compra */
+        .icon-circle {
+            background-color: var(--color-login-success);
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top" id="main-nav">
+        <div class="container">
+            <a class="navbar-brand" href="#inicio"><img class="navbar-brand-img" src="./assets/img/logo_alma.png"
+                    alt="logo alma"></a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-center" id="navbarContent">
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link active" href="#inicio">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#productos">Rostro</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#productos">Cuerpo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#envios">Envíos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#promociones">Promociones</a></li>
+                </ul>
+            </div>
+
+            <div class="d-flex align-items-center gap-3">
+                <button class="icon-trigger" id="search-btn" title="Buscar productos">
+                    <i class="fas fa-search fa-lg"></i>
+                </button>
+
+                <button class="icon-trigger position-relative" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#cartOffcanvas" aria-controls="cartOffcanvas" title="Ver carrito">
+                    <i class="fas fa-shopping-bag fa-lg"></i>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill badge-cart"
+                        id="cart-counter">0</span>
+                </button>
+                <button class="icon-trigger" id="btn-login" title="autentificarse">
+                    <i class="fas fa-user fa-lg" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div id="search-overlay">
+        <button class="close-search" id="close-search-btn">&times;</button>
+        <div class="search-container">
+            <h3 class="mb-4" style="font-family: var(--font-titulo);">¿Qué estás buscando?</h3>
+            <input type="text" class="search-input" id="search-input" placeholder="Crema, Serum, Exfoliante...">
+            <p class="mt-3 text-muted small">Presiona ESC para cerrar</p>
+        </div>
+    </div>
+
+    <header class="hero-section" id="inicio">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <span class="hero-subtitle span-margen-top">Cosmética Natural </span>
+                    <h1 class="hero-title">Conexión con la<br><span
+                            class="text-terracota fst-italic">naturaleza</span><br>en tu piel</h1>
+                    <p class="lead mb-4">Descubre el poder de los ingredientes botánicos puros. Productos artesanales
+                        que nutren tu piel y respetan el planeta.</p>
+                    <div class="d-flex gap-3">
+                        <a href="#productos" class="btn-alma-primary">Descubrir la Colección</a>
+                        <a href="#promociones" class="btn-alma-outline">Conocer Más</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 hero-image-container text-center">
+                    <img src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="Cosmética Natural" class="img-fluid w-75">
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="productos" class="py-5 section-spy">
+        <div class="container">
+            <div class="section-title">
+                <span class="section-subtitle">Nuestra Selección</span>
+                <h2>Productos Destacados</h2>
+                <p class="text-muted">Formulados con ingredientes 100% naturales y procesos artesanales.</p>
+            </div>
+
+            <div class="row g-4" id="products-grid">
+
+            </div>
+        </div>
+    </section>
+
+    <section id="envios" class="shipping-section section-spy">
+        <div class="container">
+            <div class="section-title text-center mb-5">
+                <span class="section-subtitle">Despacho Nacional</span>
+                <h2>Envíos a Regiones</h2>
+                <p>Llevamos la naturaleza a tu puerta sin importar donde estés en Chile.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="shipping-card">
+                        <div class="shipping-icon"><i class="fas fa-truck"></i></div>
+                        <h5>Envío a Todo Chile</h5>
+                        <p class="small text-muted">Llegamos a todas las regiones con seguimiento real.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="shipping-card">
+                        <div class="shipping-icon"><i class="fas fa-store"></i></div>
+                        <h5>Retiro en Tienda</h5>
+                        <p class="small text-muted">Retira gratis en nuestros puntos de venta.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="shipping-card">
+                        <div class="shipping-icon"><i class="fas fa-clock"></i></div>
+                        <h5>Entrega Rápida</h5>
+                        <p class="small text-muted">24-48 hrs en RM, 3-5 días en regiones.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="shipping-card">
+                        <div class="shipping-icon"><i class="fas fa-shield-alt"></i></div>
+                        <h5>Envío Seguro</h5>
+                        <p class="small text-muted">Todos nuestros productos viajan protegidos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="promociones" class="py-5 section-spy">
+        <div class="container">
+            <div class="section-title text-center mb-5">
+                <h2>Promociones</h2>
+                <p>Aprovecha nuestras ofertas exclusivas y cuida tu piel ahorrando.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="promo-card">
+                        <span class="text-muted small">Nuevos Clientes</span>
+                        <div class="promo-icon"><i class="fas fa-percent"></i></div>
+                        <h3>20% de Descuento</h3>
+                        <p>En tu primera compra con el código <strong>BIENVENIDA20</strong></p>
+                        <a href="#" class="btn-alma-outline btn-sm">Ver Detalles</a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="promo-card">
+                        <span class="text-muted small">Por Tiempo Limitado</span>
+                        <div class="promo-icon"><i class="fas fa-gift"></i></div>
+                        <h3>Kit de Regalo</h3>
+                        <p>Llévate un mini sérum gratis en compras sobre $40.000</p>
+                        <a href="#" class="btn-alma-outline btn-sm">Ver Detalles</a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="promo-card">
+                        <span class="text-muted small">Solo Este Mes</span>
+                        <div class="promo-icon"><i class="fas fa-star"></i></div>
+                        <h3>2x1 en Mascarillas</h3>
+                        <p>Todas las mascarillas faciales con promoción especial</p>
+                        <a href="#" class="btn-alma-outline btn-sm">Ver Detalles</a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="promo-card bg-terracota text-white" style="border:none;">
+                        <span class="small" style="color: #f0e6dc;">Programa de Fidelidad</span>
+                        <div class="promo-icon text-white"><i class="fas fa-heart"></i></div>
+                        <h3>Club El Alma</h3>
+                        <p>Únete y acumula puntos canjeables por productos exclusivos.</p>
+                        <a href="#" class="btn btn-outline-light btn-sm" style="border-radius: 30px;">Unirme Ahora</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</html>

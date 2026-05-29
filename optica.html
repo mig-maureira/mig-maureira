@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OptiVision | Tu Visión, Nuestra Pasión</title>
+  <meta name="description"
+    content="Descubre nuestra exclusiva colección de lentes con los mejores diseños, tecnología de vanguardia y atención personalizada.">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/optica-styles.css">
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <img src="https://placehold.co/48x48/2E838B/FFF?text=OV" alt="OptiVision Logo">
+        OptiVision
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto me-3">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#productos">Lentes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#servicios">Servicios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#nosotros">Nosotros</a>
+          </li>
+        </ul>
+        <div class="d-flex align-items-center gap-2">
+          <a href="#" class="nav-link text-white"><i class="bi bi-person fs-5"></i></a>
+          <a href="#" class="nav-link text-white position-relative">
+            <i class="bi bi-cart3 fs-5"></i>
+            <span class="cart-badge">2</span>
+          </a>
+          <a href="#" class="btn btn-hero btn-sm ms-2 d-none d-lg-flex align-items-center gap-2">
+            <i class="bi bi-eye"></i> Agendar Cita
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container position-relative" style="z-index: 1;">
+      <div class="text-center">
+        <div class="hero-badge">
+          <i class="bi bi-stars"></i>
+          Nueva Colección 2025
+        </div>
+        <h1 class="hero-title">
+          Tu Visión, Nuestra <span class="highlight">Pasión</span>
+        </h1>
+        <p class="hero-description">
+          Descubre nuestra exclusiva colección de lentes con los mejores diseños,
+          tecnología de vanguardia y atención personalizada para cuidar tu salud visual.
+        </p>
+        <div class="d-flex flex-column flex-sm-row justify-content-center gap-3 mb-4">
+          <a href="#productos" class="btn btn-hero d-flex align-items-center justify-content-center gap-2">
+            Ver Colección <i class="bi bi-arrow-right"></i>
+          </a>
+          <a href="#" class="btn btn-hero-outline">
+            Agendar Examen Visual
+          </a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="row justify-content-center">
+            <div class="col-4 col-md-3">
+              <div class="hero-stat-item">
+                <h3>15+</h3>
+                <p>Años de Experiencia</p>
+              </div>
+            </div>
+            <div class="col-4 col-md-3">
+              <div class="hero-stat-item">
+                <h3>5K+</h3>
+                <p>Clientes Felices</p>
+              </div>
+            </div>
+            <div class="col-4 col-md-3">
+              <div class="hero-stat-item">
+                <h3>200+</h3>
+                <p>Modelos Exclusivos</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-indicator">
+      <div class="mouse">
+        <div class="wheel"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section id="productos" class="products-section">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="section-label">Colección</p>
+        <h2 class="section-title">Te Puede Interesar</h2>
+        <p class="section-description">
+          Descubre nuestros modelos más populares con la mejor calidad y diseño.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Product 1 -->
+        <div class="col-sm-6 col-lg-3">
+          <div class="product-card">
+            <div class="product-image">
+              <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=400&h=400&fit=crop"
+                alt="Classic Black">
+              <span class="product-badge">Nuevo</span>
+              <div class="product-actions">
+                <button class="btn-icon"><i class="bi bi-heart"></i></button>
+              </div>
+            </div>
+            <div class="product-body">
+              <h5 class="product-title">Classic Black</h5>
+              <p class="product-description">Armazón elegante de acetato negro con acabado premium.</p>
+              <div class="product-footer">
+                <div>
+                  <span class="product-price">$1,299</span>
+                  <span class="product-price-old">$1,599</span>
+                </div>
+                <button class="btn btn-primary-custom btn-sm d-flex align-items-center gap-1">
+                  <i class="bi bi-cart-plus"></i> Agregar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="col-sm-6 col-lg-3">
+          <div class="product-card">
+            <div class="product-image">
+              <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=400&h=400&fit=crop"
+                alt="Aviator Gold">
+              <span class="product-badge">Nuevo</span>
+              <div class="product-actions">
+                <button class="btn-icon"><i class="bi bi-heart"></i></button>
+              </div>
+            </div>
+            <div class="product-body">
+              <h5 class="product-title">Aviator Gold</h5>
+              <p class="product-description">Gafas de sol estilo aviador con marco dorado.</p>
+              <div class="product-footer">
+                <div>
+                  <span class="product-price">$1,499</span>
+                </div>
+                <button class="btn btn-primary-custom btn-sm d-flex align-items-center gap-1">
+                  <i class="bi bi-cart-plus"></i> Agregar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="col-sm-6 col-lg-3">
+          <div class="product-card">
+            <div class="product-image">
+              <img src="https://images.unsplash.com/photo-1574258495973-f010dfbb5371?w=400&h=400&fit=crop"
+                alt="Tortoise Round">
+              <div class="product-actions">
+                <button class="btn-icon"><i class="bi bi-heart"></i></button>
+              </div>
+            </div>
+            <div class="product-body">
+              <h5 class="product-title">Tortoise Round</h5>
+              <p class="product-description">Diseño redondo vintage con patrón tortoise shell.</p>
+              <div class="product-footer">
+                <div>
+                  <span class="product-price">$1,199</span>
+                </div>
+                <button class="btn btn-primary-custom btn-sm d-flex align-items-center gap-1">
+                  <i class="bi bi-cart-plus"></i> Agregar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="col-sm-6 col-lg-3">
+          <div class="product-card">
+            <div class="product-image">
+              <img src="https://images.unsplash.com/photo-1577803645773-f96470509666?w=400&h=400&fit=crop"
+                alt="Executive Pro">
+              <div class="product-actions">
+                <button class="btn-icon"><i class="bi bi-heart"></i></button>
+              </div>
+            </div>
+            <div class="product-body">
+              <h5 class="product-title">Executive Pro</h5>
+              <p class="product-description">Lentes con filtro de luz azul para trabajo en computadora.</p>
+              <div class="product-footer">
+                <div>
+                  <span class="product-price">$1,599</span>
+                </div>
+                <button class="btn btn-primary-custom btn-sm d-flex align-items-center gap-1">
+                  <i class="bi bi-cart-plus"></i> Agregar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-5">
+        <a href="#" class="btn btn-outline-custom d-inline-flex align-items-center gap-2">
+          Ver Todo el Catálogo <i class="bi bi-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="servicios" class="services-section">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="section-label" style="color: var(--accent-color);">Servicios</p>
+        <h2 class="section-title text-white">Nuestros Servicios</h2>
+        <p class="section-description text-white-50">
+          Ofrecemos soluciones integrales para el cuidado de tu visión.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Service 1 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="bi bi-eye"></i>
+            </div>
+            <h5 class="service-title">Examen Visual</h5>
+            <p class="service-description">
+              Evaluación completa de tu salud visual con tecnología de última generación.
+            </p>
+          </div>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="bi bi-eyeglasses"></i>
+            </div>
+            <h5 class="service-title">Lentes Graduados</h5>
+            <p class="service-description">
+              Amplia variedad de armazones y lentes con la graduación que necesitas.
+            </p>
+          </div>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="bi bi-tools"></i>
+            </div>
+            <h5 class="service-title">Ajustes y Reparaciones</h5>
+            <p class="service-description">
+              Servicio técnico especializado para mantener tus lentes en perfecto estado.
+            </p>
+          </div>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="bi bi-shield-check"></i>
+            </div>
+            <h5 class="service-title">Lentes de Contacto</h5>
+            <p class="service-description">
+              Asesoría y venta de lentes de contacto de las mejores marcas.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Promo Section -->
+  <section id="nosotros" class="promo-section">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 mb-4 mb-lg-0">
+          <div class="promo-image-wrapper">
+            <div class="promo-image">
+              <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&h=600&fit=crop"
+                alt="Servicio profesional">
+            </div>
+            <div class="promo-floating-card">
+              <div class="icon-circle">
+                <span>15</span>
+              </div>
+              <div>
+                <p class="fw-semibold mb-0" style="color: var(--text-dark);">Años de</p>
+                <p class="mb-0" style="color: var(--text-muted);">Experiencia</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="promo-content">
+            <p class="section-label">¿Por qué elegirnos?</p>
+            <h2 class="section-title">Cuidamos Tu Visión Con Pasión</h2>
+            <p class="mb-4" style="color: var(--text-muted); line-height: 1.8;">
+              En OptiVision combinamos la más alta tecnología con atención
+              personalizada para brindarte la mejor experiencia en salud visual.
+              Nuestro equipo de profesionales está comprometido con tu bienestar.
+            </p>
+
+            <div class="mb-4">
+              <div class="benefit-item">
+                <div class="icon-wrapper">
+                  <i class="bi bi-check-lg"></i>
+                </div>
+                <span>Examen visual completo gratuito</span>
+              </div>
+              <div class="benefit-item">
+                <div class="icon-wrapper">
+                  <i class="bi bi-check-lg"></i>
+                </div>
+                <span>Garantía de 2 años en todos los productos</span>
+              </div>
+              <div class="benefit-item">
+                <div class="icon-wrapper">
+                  <i class="bi bi-check-lg"></i>
+                </div>
+                <span>Ajustes y mantenimiento sin costo</span>
+              </div>
+              <div class="benefit-item">
+                <div class="icon-wrapper">
+                  <i class="bi bi-check-lg"></i>
+                </div>
+                <span>Envío gratis en compras mayores a $500</span>
+              </div>
+            </div>
+
+            <a href="#" class="btn btn-accent d-inline-flex align-items-center gap-2">
+              Conoce Más Sobre Nosotros
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <!-- Brand -->
+        <div class="col-lg-3 col-md-6 mb-4">
+          <a href="#" class="footer-brand d-flex align-items-center text-white text-decoration-none mb-3">
+            <img src="https://placehold.co/48x48/2E838B/FFF?text=OV" alt="OptiVision Logo">
+            <span>OptiVision</span>
+          </a>
+          <p class="footer-description">
+            Tu visión es nuestra prioridad. Más de 15 años brindando
+            soluciones ópticas de calidad.
+          </p>
+          <div class="social-links">
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+            <a href="#"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="col-lg-3 col-md-6 mb-4">
+          <h5 class="footer-title">Enlaces</h5>
+          <ul class="footer-links">
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#productos">Catálogo</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+          </ul>
+        </div>
+
+        <!-- Legal -->
+        <div class="col-lg-3 col-md-6 mb-4">
+          <h5 class="footer-title">Legal</h5>
+          <ul class="footer-links">
+            <li><a href="#">Políticas de Privacidad</a></li>
+            <li><a href="#">Términos y Condiciones</a></li>
+            <li><a href="#">Devoluciones</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="col-lg-3 col-md-6 mb-4">
+          <h5 class="footer-title">Contacto</h5>
+          <div class="footer-contact-item">
+            <i class="bi bi-geo-alt"></i>
+            <span>Av. Principal #123, Centro, Ciudad</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="bi bi-telephone"></i>
+            <a href="tel:+521234567890">(123) 456-7890</a>
+          </div>
+          <div class="footer-contact-item">
+            <i class="bi bi-envelope"></i>
+            <a href="mailto:info@optivision.com">info@optivision.com</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 OptiVision. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

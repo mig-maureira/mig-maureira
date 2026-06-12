@@ -58,7 +58,7 @@ Actualmente me encuentro **buscando mi primera oportunidad profesional** como De
 
 Puedes contactarme a través de cualquiera de los siguientes canales:
 
-- 📧 **Email:** [mig.maureira@duocuc.cl](mailto:mig.maureira@duocuc.cl)
+- 📧 **Email:** [mig.maureira93@gmail.com](mailto:mig.maureira93@gmail.com)
 - 💼 **LinkedIn:** [Miguel Maureira](https://www.linkedin.com/in/miguel-maureira-246096379/)
 - 🐙 **GitHub:** [@mig-maureira](https://github.com/mig-maureira)
 
